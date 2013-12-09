@@ -1,0 +1,4 @@
+package rules
+
+//import com.sample.DroolsTest.*;
+import com.sample.*;

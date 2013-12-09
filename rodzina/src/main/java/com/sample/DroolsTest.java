@@ -12,9 +12,6 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 
-/**
- * This is a sample class to launch a rule.
- */
 public class DroolsTest {
 
     public static final void main(String[] args) {
@@ -23,11 +20,13 @@ public class DroolsTest {
             KnowledgeBase kbase = readKnowledgeBase();
             StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
             KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, "test");
+            Comm.setSession(ksession);
             // go !
-            Message message = new Message();
-            message.setMessage("Hello World");
-            message.setStatus(Message.HELLO);
-            ksession.insert(message);
+            // Message message = new Message();
+            // message.setMessage("Hello World");
+            // message.setStatus(Message.HELLO);
+            // ksession.insert(message);
+            init(ksession);
             ksession.fireAllRules();
             logger.close();
         } catch (Throwable t) {
@@ -37,7 +36,8 @@ public class DroolsTest {
 
     private static KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("Sample.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("asking.drl"), ResourceType.DRL);
+        kbuilder.add(ResourceFactory.newClassPathResource("artists.drl"), ResourceType.DRL);
         KnowledgeBuilderErrors errors = kbuilder.getErrors();
         if (errors.size() > 0) {
             for (KnowledgeBuilderError error: errors) {
@@ -50,31 +50,8 @@ public class DroolsTest {
         return kbase;
     }
 
-    public static class Message {
-
-        public static final int HELLO = 0;
-        public static final int GOODBYE = 1;
-
-        private String message;
-
-        private int status;
-
-        public String getMessage() {
-            return this.message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
-        public int getStatus() {
-            return this.status;
-        }
-
-        public void setStatus(int status) {
-            this.status = status;
-        }
-
+    private static void init(StatefulKnowledgeSession ksession) {
+        ksession.insert(new Question(0, "Może metal?", "boolean", new Option[] {new Option("metal", new Fact("metal"))}, false));
     }
 
 }

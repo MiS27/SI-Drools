@@ -1,0 +1,24 @@
+package rules
+
+import com.sample.*;
+
+rule "Ask metal"
+  when
+    q : Question(isId(0))
+  then
+    Comm.askQuestion(q);
+end
+
+rule "Jest metal"
+  when
+    Fact(name("metal"), value(true))
+  then
+    System.out.println("Metal kurwa!!");
+end
+
+rule "Nie ma metalu"
+  when
+    Fact(name("metal"), value(false))
+  then
+    System.out.println("Idź pan w chuj");
+end
