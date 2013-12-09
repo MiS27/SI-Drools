@@ -8,6 +8,10 @@ public class Option {
 		this.label = label;
 		this.fact = fact;
 	}
+	public Option(String label){
+		this.label = label;
+		this.fact = new Fact(label);
+	}
 	public String toString() {
 		return label;
 	}

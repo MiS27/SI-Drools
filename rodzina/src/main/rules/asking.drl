@@ -22,3 +22,11 @@ rule "Nie ma metalu"
   then
     System.out.println("Idź pan w chuj");
 end
+
+rule "Gitarra" //specjalnie rr 
+  when
+    Fact(name("gitara"), value(true))
+    q : Question(isId(0))
+  then
+    System.out.println("Idź pan w chuj");
+end

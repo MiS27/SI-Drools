@@ -1,0 +1,17 @@
+package rules
+
+import com.sample.*;
+
+rule "Start"
+  when
+    f : Fact(name("start"), value(true))
+  then
+		f.value(false);
+		update(f);
+    	insert(new Question(0, "Może metal?", "boolean", new Option[] {new Option("metal", new Fact("metal"))}, false));
+    	insert(new Question(i++, "Wybierz lubiane instrumenty", "multiple", new Option[] {new Option("bas"),new Option("gitara"),new Option("perkusja"),new Option("fortepian"),new Option("pianino"), new Option("syntezator")}, true));
+    	insert(new Question(i++, "Wybierz lubiane gitary", "multiple", new Option[] {new Option("gitara akustyczna"),new Option("gitara elektryczna"),new Option("gitara klasyczna")}, false));
+    	insert(new Question(i++, "Wybierz lubiane syntezatory", "multiple", new Option[] {new Option("moog"),new Option("syth pad"),new Option("saw lead")}, false));
+    	insert(new Question(i++, "Na co masz ochotę?", "boolean", new Option[] {new Option("instrumental"),new Option("tekst")}, true));
+    	insert(new Question(i++, "Wokal męski czy żeński?", "boolean", new Option[] {new Option("męski"),new Option("żeński")}, false));
+end
