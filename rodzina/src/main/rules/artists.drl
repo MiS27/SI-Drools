@@ -2,3 +2,27 @@ package rules
 
 //import com.sample.DroolsTest.*;
 import com.sample.*;
+
+rule "Opeth"
+    when
+        Fact(name("metal"), value(true))
+        Fact(name("gutiar"), value(true))
+        Fact(name("drums"), value(true))
+        Fact(name("bass"), value(true))
+        not Fact(name("instrumental"), value(true))
+        Fact(name("scream"), value(true))
+        (or
+            Fact(name("alt metal"), value(true))
+            Fact(name("progressive metal"), value(true))
+            Fact(name("folk metal"), value(true))
+            Fact(name("death metal"), value(true))
+        )
+        Fact(name("long songs"), value(true))
+        not Fact(name("dzielnia"), value(true))
+        (or
+            Fact(name("hight tempo"), value(true))
+            Fact(name("mid tempo"), value(true))
+        )
+    then
+        Comm.showMessage("Zespół dla Ciebie to Opeth");
+end

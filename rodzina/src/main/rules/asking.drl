@@ -9,11 +9,18 @@ rule "Ask metal"
     Comm.askQuestion(q);
 end
 
+rule "Ask instruments"
+  when
+    q : Question(isId(1))
+  then
+    Comm.askQuestion(q);
+end
+
 rule "Jest metal"
   when
     Fact(name("metal"), value(true))
   then
-    System.out.println("Metal kurwa!!");
+    Comm.showMessage("Metal kurwa!!");
 end
 
 rule "Nie ma metalu"
@@ -23,7 +30,7 @@ rule "Nie ma metalu"
     System.out.println("Idź pan w chuj");
 end
 
-rule "Gitarra" //specjalnie rr 
+rule "Gitarra" //specjalnie rr
   when
     Fact(name("gitara"), value(true))
     q : Question(isId(0))

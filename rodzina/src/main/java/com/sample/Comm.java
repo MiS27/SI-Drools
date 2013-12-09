@@ -69,7 +69,7 @@ public class Comm {
 		}
 
 		JList list = new JList(opt);
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 		Object[] options = {question.text, question.possibleAnswers};
 		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.PLAIN_MESSAGE);
