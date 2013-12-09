@@ -24,9 +24,8 @@ public class Comm {
 	public static void setSession(StatefulKnowledgeSession session) {
 		ksession = session;
 	}
-	public static void showMessage(String messageName) {
-		// String message = getMessage(messageName);
-		// JOptionPane.showMessageDialog(null, message);
+	public static void showMessage(String message) {
+		JOptionPane.showMessageDialog(null, message);
 	}
 
 	public static void askQuestion(Question question) {
