@@ -10,7 +10,7 @@ lyrics dont matter
 quit
 */
 
-rule "End"
+rule "Ad"
     salience -1
 	when
 	then
