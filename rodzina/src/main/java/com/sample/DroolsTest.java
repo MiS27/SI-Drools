@@ -40,11 +40,8 @@ public class DroolsTest extends JFrame {
             // ksession.insert(message);
             init(ksession);
             ksession.fireUntilHalt();
-            System.out.println("test");
             logger.close();
-            System.out.println("test2");
             frame.dispose();
-            System.out.println("test3");
         } catch (Throwable t) {
             t.printStackTrace();
         }

@@ -15,6 +15,7 @@ rule "Ad"
 	when
 	then
         Comm.showMessage("Nasza baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
+        drools.halt();
 end
 
 rule "Opeth easy"
