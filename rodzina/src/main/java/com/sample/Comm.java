@@ -68,7 +68,7 @@ public class Comm {
 			opt[i] = question.possibleAnswers[i].toString();
 		}
 
-		JList list = new JList(opt);
+		JList<String> list = new JList<String>(opt);
 		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 		Object[] options = {question.text, question.possibleAnswers};

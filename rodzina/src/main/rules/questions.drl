@@ -6,9 +6,8 @@ rule "Start"
   when
     f : Fact(name("start"), value(true))
   then
-		f.value(false);
-		update(f);
-    	insert(new Question(0, "Może metal?", "boolean", new Option[] {new Option("metal", new Fact("metal"))}, false));
+		int i = 0;
+    	insert(new Question(i++, "Może metal?", "boolean", new Option[] {new Option("metal", new Fact("metal", true))}, true));
     	insert(new Question(i++, "Wybierz lubiane instrumenty", "boolean", new Option[] {new Option("bas"),new Option("gitara"),new Option("perkusja"),new Option("fortepian"),new Option("pianino"), new Option("syntezator")}, true));
     	insert(new Question(i++, "Wybierz lubiane gitary", "boolean", new Option[] {new Option("gitara akustyczna"),new Option("gitara elektryczna"),new Option("gitara klasyczna")}, false));
     	insert(new Question(i++, "Wybierz lubiane syntezatory", "boolean", new Option[] {new Option("moog"),new Option("syth pad"),new Option("saw lead")}, false));
