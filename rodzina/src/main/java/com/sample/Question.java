@@ -21,6 +21,12 @@ public class Question {
 	public void activate() {
 		this.active = true;
 	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 	public void asked() {
 		this.asked = true;
 	}

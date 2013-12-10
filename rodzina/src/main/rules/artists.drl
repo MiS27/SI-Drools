@@ -12,7 +12,7 @@ quit
 
 rule "Ad"
 	when
-		not (exists Question(active==true))
+		not (exists Question(isActive()))
 		Fact(name("start"), value(false))
 	then
         Comm.showMessage("Nasz baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");

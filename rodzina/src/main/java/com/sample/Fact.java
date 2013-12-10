@@ -33,6 +33,14 @@ public class Fact {
         booleanValue = value;
     }
 
+    public void setValue(String value) {
+    	stringValue = value;
+    }
+
+    public void setValue(int value) {
+        intValue = value;
+    }
+
     public boolean value(boolean value) {
         return booleanValue == value;
     }

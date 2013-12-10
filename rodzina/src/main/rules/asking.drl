@@ -4,7 +4,7 @@ import com.sample.*;
 
 rule "Ask"
   when
-    q : Question(active==true)
+    q : Question(isActive())
   then
     q.active=false;
     update(q);
