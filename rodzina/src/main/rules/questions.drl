@@ -34,6 +34,17 @@ rule "Start"
       insert(new Question(i++, "Jakie podgatunki country?", Question.MULTIPLE, new Option[] {new Option("close harmony"),new Option("nashville"),new Option("rockabilly")}, false)); // 11
 
       insert(new Question(i++, "Jakie podgatunki electro?", Question.MULTIPLE, new Option[] {new Option("industrial"),new Option("techno"),new Option("house"),new Option("dupstep"),new Option("uk garage")}, false)); // 12
+
+      insert(new Question(i++, "Jakie podgatunki rocka?", Question.MULTIPLE, new Option[] {new Option("alt rock"),new Option("art rock"),new Option("rapcore"),new Option("glam rock"),new Option("grunge"),new Option("hard rock"),new Option("progressive rock"),new Option("punk rock"),new Option("soft rock")}, false)); // 13
+
+      insert(new Question(i++, "Jakie podgatunki metalu?", Question.MULTIPLE, new Option[] {new Option("alt metal"),new Option("death metal"),new Option("nu metal"),new Option("post-metal"),new Option("progressive metal"),new Option("sludge metal"),new Option("doom metal"),new Option("symphonic metal"),new Option("viking metal"),new Option("neo-classical metal"),new Option("folk metal")}, false)); // 14
+
+      insert(new Question(i++, "Jakie podgatunki folku?", Question.MULTIPLE, new Option[] {new Option("irish"),new Option("polish"),new Option("indian"),new Option("balkanian")}, false)); // 15
+
+      insert(new Question(i++, "Jakie podgatunki hiphopu?", Question.MULTIPLE, new Option[] {new Option("gangsta rap"),new Option("rap opera"),new Option("psycho hiphop"),new Option("rap")}, false)); // 16
+
+      insert(new Question(i++, "Jakie podgatunki electro?", Question.MULTIPLE, new Option[] {new Option("industrial"),new Option("techno"),new Option("house"),new Option("dupstep"),new Option("uk garage")}, false)); // 12
+      insert(new Question(i++, "Jakie podgatunki electro?", Question.MULTIPLE, new Option[] {new Option("industrial"),new Option("techno"),new Option("house"),new Option("dupstep"),new Option("uk garage")}, false)); // 12
 end
 
 rule "test"

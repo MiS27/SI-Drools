@@ -10,10 +10,9 @@ lyrics dont matter
 quit
 */
 
-rule "Ad"
+rule "End"
+    salience -1
 	when
-		not (exists Question(isActive()))
-		Fact(name("start"), value(false))
 	then
         Comm.showMessage("Nasz baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
 end
