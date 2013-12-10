@@ -169,7 +169,7 @@ rule "Deep Purple"
         Fact(name("scream"), value(false))
         Fact(name("clean vocal"), value(true))
         Fact(name("instrumental"), value(false))
-        Fact(name("short songs"), value(true))
+        Fact(name("medium songs"), value(true))
         (or
             Fact(name("mid tempo"), value(true))
             Fact(name("fast tempo"), value(true))
