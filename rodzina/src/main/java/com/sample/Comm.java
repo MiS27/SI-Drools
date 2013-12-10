@@ -35,7 +35,10 @@ public class Comm {
 		// else if (question.type.equals("numeric")) {
 		// 	askNumericQuestion(question);
 		// }
-		else if (question.type.equals("multiple")) {
+		/*else if (question.type.equals("multiple")) {
+			askMultipleQuestion(question);
+		}*/
+		else {
 			askMultipleQuestion(question);
 		}
 	}
@@ -69,7 +72,10 @@ public class Comm {
 		}
 
 		JList<String> list = new JList<String>(opt);
-		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		if (question.type == question.MULTIPLE)
+			list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		else
+			list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		Object[] options = {list};
 		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);

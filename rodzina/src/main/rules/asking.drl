@@ -2,19 +2,19 @@ package rules
 
 import com.sample.*;
 
-rule "Ask metal"
+rule "Ask"
   when
-    q : Question(isId(0))
+    q : Question(active==true)
   then
     Comm.askQuestion(q);
 end
 
-rule "Ask instruments"
-  when
-    q : Question(isId(1))
-  then
-    Comm.askQuestion(q);
-end
+//rule "Ask instruments"
+//  when
+//    q : Question(isId(1))
+//  then
+//    Comm.askQuestion(q);
+//end
 
 // rule "Jest metal"
 //   when
