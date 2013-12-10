@@ -16,7 +16,7 @@ rule "Opeth"
         Fact(name("gutiar"), value(true))
         Fact(name("drums"), value(true))
         Fact(name("bass"), value(true))
-        not Fact(name("instrumental"), value(true))
+        Fact(name("instrumental"), value(false))
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
@@ -45,6 +45,27 @@ rule "Glenn Miller"
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
 end
 
+rule "Jamiroquai"
+    when
+        (or
+            Fact(name("jazz"), value(true))
+            Fact(name("rock"), value(true))
+            Fact(name("acid jazz"), value(true))
+        )
+        Fact(name("guitar"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("instrumental"), value(false))
+        (or
+            Fact(name("high tempo"), value(true))
+            Fact(name("mid tempo"), value(true))
+        )
+        Fact(name("medium songs"), value(true))
+        Fact(name("medium lyrics"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Jamiroquai");
+end
+
 rule "Andy McKee"
     when
         Fact(name("guitar"), value(true))
@@ -68,7 +89,7 @@ rule "RHCP"
         Fact(name("guitar"), value(true))
         Fact(name("bass"), value(true))
         Fact(name("drums"), value(true))
-        not Fact(name("instrumental"), value(true))
+        Fact(name("instrumental"), value(false))
         Fact(name("clean vocal"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
@@ -96,7 +117,7 @@ rule "Yeasayer"
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("clean vocal"), value(true))
-        not Fact(name("instrumental"), value(true))
+        Fact(name("instrumental"), value(false))
         (or
             Fact(name("house"), value(true))
             Fact(name("alt rock"), value(true))
@@ -106,7 +127,7 @@ rule "Yeasayer"
             Fact(name("dream pop"), value(true))
         )
         Fact(name("short songs"), value(true))
-        not Fact(name("dzielnia"), value(true))
+        Fact(name("dzielnia"), value(false))
         (or
             Fact(name("slow tempo"), value(true))
             Fact(name("mid tempo"), value(true))
