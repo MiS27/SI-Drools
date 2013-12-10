@@ -38,7 +38,7 @@ end
 
 rule "Opeth"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -75,6 +75,8 @@ rule "Glenn Miller easy way"
     when
         Fact(name("easy way"), value(true))
         Fact(name("jazz"), value(true))
+        Fact(name("instrumental"), value(true))
+        Fact(name("band"), value(true))
     then
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
         drools.halt();
@@ -82,12 +84,14 @@ end
 
 rule "Glenn Miller hard way"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("america"), value(true))
         	)
         Fact(name("hard way"), value(true))
-        Fact(name("jazz"), value(true))
+        Fact(name("instrumental"), value(true))
+        Fact(name("band"), value(true))
+        Fact(name("swing"), value(true))
         Fact(name("opera"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
@@ -112,7 +116,7 @@ end
 
 rule "Jamiroquai hard way"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -152,7 +156,7 @@ end
 
 rule "Andy McKee"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("america"), value(true))
         	)
@@ -190,7 +194,7 @@ end
 
 rule "RHCP"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("america"), value(true))
         	)
@@ -242,7 +246,7 @@ end
 
 rule "Yeasayer"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -272,7 +276,7 @@ end
 
 rule "Deep Purple easy way"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -346,7 +350,7 @@ end
 
 rule "Riverside"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -386,7 +390,7 @@ end
 
 rule "Peja"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("europe"), value(true))
         	)
@@ -426,7 +430,7 @@ end
 
 rule "Johnny Cash hard way"
     when
-    	or(
+    	(or
         	Fact(name("where"), value(false))
         	Fact(name("america"), value(true))
         	)
