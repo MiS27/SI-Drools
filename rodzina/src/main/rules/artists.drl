@@ -151,3 +151,50 @@ rule "Yeasayer2"
     then
         Comm.showMessage("Zespół dla Ciebie to Yeasayer");
 end
+
+
+
+rule "Deep Purple"
+    when
+        (or
+            Fact(name("hard rock"), value(true))
+            Fact(name("heavy metal"), value(true))
+            Fact(name("acid rock"), value(true))
+        )
+        Fact(name("guitar"), value(true))
+        Fact(name("band"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("scream"), value(false))
+        Fact(name("clean vocal"), value(true))
+        Fact(name("instrumental"), value(false))
+        Fact(name("short songs"), value(true))
+        (or
+            Fact(name("mid tempo"), value(true))
+            Fact(name("fast tempo"), value(true))
+        )
+    then
+        Comm.showMessage("Zespół dla Ciebie to Deep Purple");
+end
+
+rule "Riverside"
+    when
+        (or
+            Fact(name("progressive rock"), value(true))
+            Fact(name("progressive metal"), value(true))
+        )
+        (or 
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	Fact(name("piano"), value(true))
+        )
+        Fact(name("band"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("scream"), value(false))
+        Fact(name("clean vocal"), value(true))
+        Fact(name("long songs"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Riverside");
+end
