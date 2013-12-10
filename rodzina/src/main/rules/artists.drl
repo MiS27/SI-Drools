@@ -48,7 +48,15 @@ end
 rule "Andy McKee"
     when
         Fact(name("guitar"), value(true))
+        Fact(name("acoustic guitar"), value(true))
+        Fact(name("solo"), value(true))
         Fact(name("instrumental"), value(true))
+        (or
+            Fact(name("alt rock"), value(true))
+            Fact(name("art rock"), value(true))
+            Fact(name("folk"), value(true))
+            Fact(name("acoustic rock"), value(true))
+        )
         not Fact(name("known"), value(true))
     then
         Comm.showMessage("Wykonawca dla Ciebie to Andy McKee")
