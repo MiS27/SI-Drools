@@ -236,7 +236,7 @@ rule "Riverside"
             Fact(name("progressive rock"), value(true))
             Fact(name("progressive metal"), value(true))
         )
-        (or 
+        (or
         	Fact(name("guitar"), value(true))
         	Fact(name("drums"), value(true))
         	Fact(name("bass"), value(true))
@@ -255,8 +255,8 @@ end
 
 rule "Peja"
     when
-        Fact(name("hiphop"), value(true)) 
-        (or 
+        Fact(name("hiphop"), value(true))
+        (or
         	Fact(name("dzielnia"), value(true))
         	Fact(name("blaster"), value(true))
         )
