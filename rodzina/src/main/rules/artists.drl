@@ -10,12 +10,21 @@ lyrics dont matter
 quit
 */
 
+rule "guitar"
+    when
+        Fact(name("guitar"), value(true))
+    then
+        Comm.showMessage("artist dla Ciebie to guitar");
+end
+
 rule "Opeth"
     when
         Fact(name("metal"), value(true))
-        Fact(name("gutiar"), value(true))
-        Fact(name("drums"), value(true))
-        Fact(name("bass"), value(true))
+        (or
+            Fact(name("gutiar"), value(true))
+            Fact(name("drums"), value(true))
+            Fact(name("bass"), value(true))
+        )
         Fact(name("instrumental"), value(false))
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))

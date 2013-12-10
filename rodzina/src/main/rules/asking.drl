@@ -16,23 +16,23 @@ rule "Ask instruments"
     Comm.askQuestion(q);
 end
 
-rule "Jest metal"
-  when
-    Fact(name("metal"), value(true))
-  then
-    Comm.showMessage("Metal kurwa!!");
-end
+// rule "Jest metal"
+//   when
+//     Fact(name("metal"), value(true))
+//   then
+//     Comm.showMessage("Metal kurwa!!");
+// end
 
-rule "Nie ma metalu"
-  when
-    Fact(name("metal"), value(false))
-  then
-    System.out.println("Idź pan w chuj");
-end
+// rule "Nie ma metalu"
+//   when
+//     Fact(name("metal"), value(false))
+//   then
+//     System.out.println("Idź pan w chuj");
+// end
 
 rule "Gitarra" //specjalnie rr
   when
-    Fact(name("gitara"), value(true))
+    Fact(name("guitar"), value(true))
     q : Question(isId(0))
   then
     System.out.println("Idź pan w chuj");

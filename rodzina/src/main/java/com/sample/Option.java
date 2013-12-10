@@ -10,7 +10,7 @@ public class Option {
 	}
 	public Option(String label){
 		this.label = label;
-		this.fact = new Fact(label);
+		this.fact = new Fact(label, true);
 	}
 	public String toString() {
 		return label;
