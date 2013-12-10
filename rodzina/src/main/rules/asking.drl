@@ -158,3 +158,59 @@ rule "Ask scream"
         q.asked();
         update(q);
 end
+
+rule "Ask lyrics"
+    when
+        Fact(name("instrumental"), value(false))
+        pq : Question(isId(5), asked == true)
+        q : Question(isId(19))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask length"
+    when
+        q : Question(isId(20))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask dzielnia"
+    when
+        q : Question(isId(21))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask blaster"
+    when
+        q : Question(isId(22))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask known"
+    when
+        q : Question(isId(23))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask solo"
+    when
+        q : Question(isId(24))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end

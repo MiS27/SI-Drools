@@ -55,7 +55,7 @@ rule "Start"
 
       insert(new Question(i++, "Będziesz katować innych tą muzyką przy pomocy głóśników w Twojej komórce?", Question.BOOLEAN, new Option[] {new Option("blaster")}, true)); // 22
 
-      insert(new Question(i++, "Czy zespół musi być znany?", Question.BOOLEAN, new Option[] {new Option("know")}, true)); // 23
+      insert(new Question(i++, "Czy zespół musi być znany?", Question.BOOLEAN, new Option[] {new Option("known")}, true)); // 23
 
       insert(new Question(i++, "Wolisz wykonawcę solo czy zespół?", Question.BOOLEAN, new Option[] {new Option("solo")}, true)); // 22
 
