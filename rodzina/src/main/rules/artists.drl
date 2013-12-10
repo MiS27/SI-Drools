@@ -56,3 +56,29 @@ rule "RHCP"
     then
         Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
 end
+
+rule "Yeasayer"
+    when
+        (or
+            Fact(name("pop"), value(true))
+            Fact(name("rock"), value(true))
+            Fact(name("electro"), value(true))
+        )
+        Fact(name("guitar"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("clean vocal"), value(true))
+        not Fact(name("instrumental"), value(true))
+        (or
+            Fact(name("house"), value(true))
+            Fact(name("alt rock"), value(true))
+            Fact(name("art rock"), value(true))
+            Fact(name("soft rock"), value(true))
+            Fact(name("indie pop"), value(true))
+            Fact(name("dream pop"), value(true))
+        )
+        Fact(name("short songs"), value(true))
+        not Fact(name("dzielnia"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Yeasayer")
+end
