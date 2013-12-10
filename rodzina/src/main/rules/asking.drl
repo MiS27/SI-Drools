@@ -2,40 +2,161 @@ package rules
 
 import com.sample.*;
 
-rule "Ask"
-  when
-    q : Question(isActive())
-  then
-    q.active=false;
-    update(q);
-    Comm.askQuestion(q);
+rule "Ask instruments"
+	when
+		q : Question(isId(2))
+	then
+		Comm.askQuestion(q);
+		q.asked();
 end
 
-//rule "Ask instruments"
-//  when
-//    q : Question(isId(1))
-//  then
-//    Comm.askQuestion(q);
-//end
+rule "Ask guitars"
+    when
+    	Fact(name("guitar"), value(true))
+        q : Question(isId(3))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Jest metal"
-//   when
-//     Fact(name("metal"), value(true))
-//   then
-//     Comm.showMessage("Metal kurwa!!");
+rule "Ask syths"
+    when
+    	Fact(name("synth"), value(true))
+        q : Question(isId(4))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+end
+
+rule "Ask genres"
+	when
+		q : Question(isId(9))
+	then
+		Comm.askQuestion(q);
+		q.asked();
+end
+
+rule "Ask blues"
+	when
+		Fact(name("blues"), value(true))
+		q : Question(isId(10))
+	then
+		Comm.askQuestion(q);
+		q.asked();
+end
+
+rule "Ask country"
+	when
+		Fact(name("country"), value(true))
+		q : Question(isId(11))
+	then
+		Comm.askQuestion(q);
+		q.asked();
+end
+
+rule "Ask electro"
+	when
+		Fact(name("electro"), value(true))
+		q : Question(isId(12))
+	then
+		Comm.askQuestion(q);
+		q.asked();
+end
+
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
 // end
 
-// rule "Nie ma metalu"
-//   when
-//     Fact(name("metal"), value(false))
-//   then
-//     System.out.println("Idź pan w chuj");
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
 // end
 
-rule "Gitarra" //specjalnie rr
-  when
-    Fact(name("guitar"), value(true))
-    q : Question(isId(0))
-  then
-    System.out.println("Idź pan w chuj");
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
+// end
+
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
+// end
+
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
+// end
+
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
+// end
+
+// rule "Ask blues"
+// 	when
+// 		Fact(name("blues"), value(true))
+// 		q : Question(isId(10))
+// 	then
+// 		Comm.askQuestion(q);
+// end
+
+rule "Ask instrumental"
+    when
+        q : Question(isId(5), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask male vocal"
+    when
+    	Fact(name("instrumental"), value(false))
+        pq : Question(isId(5), asked == true)
+        q : Question(isId(6), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask opera"
+    when
+    	Fact(name("instrumental"), value(false))
+        pq : Question(isId(5), asked == true)
+        q : Question(isId(7), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask scream"
+    when
+    	Fact(name("instrumental"), value(false))
+        pq : Question(isId(5), asked == true)
+        q : Question(isId(8), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
 end
