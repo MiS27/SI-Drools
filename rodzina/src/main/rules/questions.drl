@@ -25,7 +25,7 @@ rule "Start"
 
       insert(new Question(i++, "Jakie gatunki lubisz?", "multiple", new Option[] {new Option("blues"),new Option("country"),new Option("electro"),new Option("rock"),new Option("metal"),new Option("film"),new Option("folk"),new Option("gaming"),new Option("hiphop"),new Option("jazz"),new Option("poetry"),new Option("pop"),new Option("reggae"),new Option("classical"),new Option("disco")}, true));
 
-      insert(new Question(i++, "Jaikie podgatunki bluesa?", "multiple", new Option[] {new Option("boogie-woogie"),new Option("country blues"),new Option("electric blues"),new Option("piano blues"),new Option("chicago blues"),new Option("r&b"),new Option("jazz blues")}, false));
+      insert(new Question(i++, "Jakie podgatunki bluesa?", "multiple", new Option[] {new Option("boogie-woogie"),new Option("country blues"),new Option("electric blues"),new Option("piano blues"),new Option("chicago blues"),new Option("r&b"),new Option("jazz blues")}, false));
 
       insert(new Question(i++, "Jakie podgatunki country?", "multiple", new Option[] {new Option("close harmony"),new Option("nashville"),new Option("rockabilly")}, false));
 
@@ -34,7 +34,7 @@ end
 
 rule "test"
   when
-    f : Fact(name("bas"))
+    f : Fact(name("bass"))
   then
     Comm.showMessage("Bas!!");
 end
