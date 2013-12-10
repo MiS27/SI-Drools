@@ -29,11 +29,20 @@ rule "Opeth"
         Fact(name("long songs"), value(true))
         not Fact(name("dzielnia"), value(true))
         (or
-            Fact(name("hight tempo"), value(true))
+            Fact(name("high tempo"), value(true))
             Fact(name("mid tempo"), value(true))
         )
     then
         Comm.showMessage("Zespół dla Ciebie to Opeth");
+end
+
+rule "Glenn Miller"
+    when
+        Fact(name("jazz"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("name"), value(bool))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
 end
 
 rule "RHCP"
@@ -79,6 +88,10 @@ rule "Yeasayer"
         )
         Fact(name("short songs"), value(true))
         not Fact(name("dzielnia"), value(true))
+        (or
+            Fact(name("slow tempo"), value(true))
+            Fact(name("mid tempo"), value(true))
+        )
     then
         Comm.showMessage("Zespół dla Ciebie to Yeasayer")
 end
