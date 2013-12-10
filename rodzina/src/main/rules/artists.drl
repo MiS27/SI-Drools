@@ -40,7 +40,7 @@ rule "Opeth"
         Fact(name("hard way"), value(true))
         (or
         //szczegolowiej
-            Fact(name("gutiar"), value(true))
+            Fact(name("guitar"), value(true))
             Fact(name("drums"), value(true))
             Fact(name("bass"), value(true))
         )
