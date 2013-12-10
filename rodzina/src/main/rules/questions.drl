@@ -13,7 +13,7 @@ rule "Start"
 
     	insert(new Question(i++, "Wybierz lubiane instrumenty", Question.MULTIPLE, new Option[] {new Option("bass"),new Option("guitar"),new Option("drums"),new Option("piano"), new Option("synth")}, true)); // 2
 
-    	insert(new Question(i++, "Wybierz lubiane gitary", Question.MULTIPLE, new Option[] {new Option("gitara akustyczna"),new Option("gitara elektryczna"),new Option("gitara klasyczna")}, false)); // 3
+    	insert(new Question(i++, "Wybierz lubiane gitary", Question.MULTIPLE, new Option[] {new Option("acoustic guitar"),new Option("electric guitar"),new Option("classic guitar")}, false)); // 3
 
     	insert(new Question(i++, "Wybierz lubiane syntezatory", Question.MULTIPLE, new Option[] {new Option("moog"),new Option("syth pad"),new Option("saw lead"),new Option("wobwobwobwobwobwob")}, false)); // 4
 
