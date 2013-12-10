@@ -21,7 +21,7 @@ rule "Start"
 
     	insert(new Question(i++, "Czy ma to być muzyka instrumentalna?", Question.BOOLEAN, new Option[] {new Option("instrumental")}, false)); // 5
 
-      insert(new Question(i++, "Wokal męski czy żeński?", Question.SINGLE, new Option[] {new Option("male vocal")}, false)); // 6
+      insert(new Question(i++, "Wokal męski?", Question.BOOLEAN, new Option[] {new Option("male vocal")}, false)); // 6
 
       insert(new Question(i++, "Spiew operowy?", Question.BOOLEAN, new Option[] {new Option("opera")}, false)); // 7
 
@@ -43,8 +43,22 @@ rule "Start"
 
       insert(new Question(i++, "Jakie podgatunki hiphopu?", Question.MULTIPLE, new Option[] {new Option("gangsta rap"),new Option("rap opera"),new Option("psycho hiphop"),new Option("rap")}, false)); // 16
 
-      insert(new Question(i++, "Jakie podgatunki electro?", Question.MULTIPLE, new Option[] {new Option("industrial"),new Option("techno"),new Option("house"),new Option("dupstep"),new Option("uk garage")}, false)); // 12
-      insert(new Question(i++, "Jakie podgatunki electro?", Question.MULTIPLE, new Option[] {new Option("industrial"),new Option("techno"),new Option("house"),new Option("dupstep"),new Option("uk garage")}, false)); // 12
+      insert(new Question(i++, "Jakie podgatunki jazzu?", Question.MULTIPLE, new Option[] {new Option("smooth jazz"),new Option("swing"),new Option("acid jazz"),new Option("funk"),new Option("ska")}, false)); // 17
+
+      insert(new Question(i++, "Jakie podgatunki popu?", Question.MULTIPLE, new Option[] {new Option("synth pop"),new Option("brit pop"),new Option("indie pop"),new Option("symphonic pop"),new Option("dream pop")}, false)); // 18
+
+      insert(new Question(i++, "Jak ważny jest dla Ciebie tekst?", Question.MULTIPLE, new Option[] {new Option("good lyrics"),new Option("medium lyrics"),new Option("lyrics dont matter"), new Option("nie wiem, nie znam sie, nie orientuje sie, zarobiony jestem")}, false)); // 19
+
+      insert(new Question(i++, "Jak długie powinny być utwory?", Question.MULTIPLE, new Option[] {new Option("long songs"),new Option("medium songs"),new Option("short songs")}, false)); // 20
+
+      insert(new Question(i++, "Będziesz słuchał muzyki, żeby pokazać się 'na dzielni'?", Question.BOOLEAN, new Option[] {new Option("dzielnia")}, false)); // 21
+
+      insert(new Question(i++, "Będziesz katować innych tą muzyką przy pomocy głóśników w Twojej komórce?", Question.BOOLEAN, new Option[] {new Option("blaster")}, true)); // 22
+
+      insert(new Question(i++, "Czy zespół musi być znany?", Question.BOOLEAN, new Option[] {new Option("know")}, true)); // 23
+
+      insert(new Question(i++, "Wolisz wykonawcę solo czy zespół?", Question.BOOLEAN, new Option[] {new Option("solo")}, true)); // 22
+
 end
 
 rule "test"

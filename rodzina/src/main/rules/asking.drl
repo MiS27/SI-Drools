@@ -63,61 +63,59 @@ rule "Ask electro"
 		q.asked();
 end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask rock"
+	when
+		Fact(name("rock"), value(true))
+		q : Question(isId(13))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask metal"
+	when
+		Fact(name("metal"), value(true))
+		q : Question(isId(14))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask folk"
+	when
+		Fact(name("folk"), value(true))
+		q : Question(isId(15))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask hiphop"
+	when
+		Fact(name("hiphop"), value(true))
+		q : Question(isId(16))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask jazz"
+	when
+		Fact(name("jazz"), value(true))
+		q : Question(isId(17))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
-
-// rule "Ask blues"
-// 	when
-// 		Fact(name("blues"), value(true))
-// 		q : Question(isId(10))
-// 	then
-// 		Comm.askQuestion(q);
-// end
+rule "Ask pop"
+	when
+		Fact(name("pop"), value(true))
+		q : Question(isId(18))
+	then
+		Comm.askQuestion(q);
+        q.asked();
+end
 
 rule "Ask instrumental"
     when
