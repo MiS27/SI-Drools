@@ -6,6 +6,8 @@ rule "Ask"
   when
     q : Question(active==true)
   then
+    q.active=false;
+    update(q);
     Comm.askQuestion(q);
 end
 

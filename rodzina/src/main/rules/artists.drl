@@ -10,6 +10,14 @@ lyrics dont matter
 quit
 */
 
+rule "Ad"
+	when
+		not (exists Question(active==true))
+		Fact(name("start"), value(false))
+	then
+        Comm.showMessage("Nasz baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
+end
+
 rule "guitar"
     when
         Fact(name("guitar"), value(true))

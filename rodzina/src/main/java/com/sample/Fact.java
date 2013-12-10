@@ -29,6 +29,10 @@ public class Fact {
         return name.equals(value);
     }
 
+    public void setValue(boolean value) {
+        booleanValue = value;
+    }
+
     public boolean value(boolean value) {
         return booleanValue == value;
     }
