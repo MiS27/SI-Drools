@@ -163,7 +163,7 @@ rule "Ask lyrics"
     when
         Fact(name("instrumental"), value(false))
         pq : Question(isId(5), asked == true)
-        q : Question(isId(19))
+        q : Question(isId(19), asked == false)
     then
         Comm.askQuestion(q);
         q.asked();
@@ -176,7 +176,6 @@ rule "Ask length"
     then
         Comm.askQuestion(q);
         q.asked();
-        update(q);
 end
 
 rule "Ask dzielnia"
@@ -185,7 +184,6 @@ rule "Ask dzielnia"
     then
         Comm.askQuestion(q);
         q.asked();
-        update(q);
 end
 
 rule "Ask blaster"
@@ -194,7 +192,6 @@ rule "Ask blaster"
     then
         Comm.askQuestion(q);
         q.asked();
-        update(q);
 end
 
 rule "Ask known"
@@ -203,12 +200,30 @@ rule "Ask known"
     then
         Comm.askQuestion(q);
         q.asked();
-        update(q);
 end
 
 rule "Ask solo"
     when
         q : Question(isId(24))
+    then
+        Comm.askQuestion(q);
+        q.asked();
+end
+
+rule "Ask where"
+    when
+        q : Question(isId(25), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Ask where2"
+    when
+        Fact(name("where"), value(true))
+        pq : Question(isId(25), asked == true)
+        q : Question(isId(26))
     then
         Comm.askQuestion(q);
         q.asked();

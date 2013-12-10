@@ -14,14 +14,7 @@ rule "Ad"
     salience -1
 	when
 	then
-        Comm.showMessage("Nasz baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
-end
-
-rule "guitar"
-    when
-        Fact(name("guitar"), value(true))
-    then
-        Comm.showMessage("artist dla Ciebie to guitar");
+        Comm.showMessage("Nasza baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
 end
 
 rule "Opeth"
@@ -44,11 +37,7 @@ rule "Opeth"
             Fact(name("death metal"), value(true))
         )
         Fact(name("long songs"), value(true))
-        not Fact(name("dzielnia"), value(true))
-        (or
-            Fact(name("high tempo"), value(true))
-            Fact(name("mid tempo"), value(true))
-        )
+        Fact(name("dzielnia"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Opeth");
 end

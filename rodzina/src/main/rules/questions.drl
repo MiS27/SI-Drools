@@ -57,6 +57,9 @@ rule "Start"
 
       insert(new Question(i++, "Czy zespół musi być znany?", Question.BOOLEAN, new Option[] {new Option("known")}, true)); // 23
 
-      insert(new Question(i++, "Wolisz wykonawcę solo czy zespół?", Question.BOOLEAN, new Option[] {new Option("solo")}, true)); // 22
+      insert(new Question(i++, "Wolisz wykonawcę solo czy zespół?", Question.SINGLE, new Option[] {new Option("solo"), new Option("band")}, true)); // 24
 
+      insert(new Question(i++, "Ma dla Ciebie znaczenie skąd pochodzi wykonawca?", Question.BOOLEAN, new Option[] {new Option("where")}, true)); // 25
+
+      insert(new Question(i++, "skąd ma pochodzić?", Question.MULTIPLE, new Option[] {new Option("america"), new Option("europe"), new Option("asia"), new Option("aussie"), new Option("africa")}, true)); // 26
 end
