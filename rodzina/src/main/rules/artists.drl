@@ -343,6 +343,7 @@ end
 
 rule "Peja easy way"
     when
+        Fact(name("easy way"), value(true))
         Fact(name("hiphop"), value(true))
         Fact(name("solo"), value(true))
         Fact(name("instrumental"), value(false))
@@ -362,5 +363,98 @@ rule "Peja"
         Fact(name("medium songs"), value(true))
     then
         Comm.showMessage("Peja to Twój wybór, to Twoja rzeczywistość.");
+        drools.halt();
+end
+
+rule "Johnny Cash easy way"
+    when
+        Fact(name("easy way"), value(true))
+        	Fact(name("instrumental"), value(false))
+        	Fact(name("dzielnia"), value(false))
+        	Fact(name("blaster"), value(false))
+        	Fact(name("solo"), value(true))
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("piano"), value(true))
+        )
+        (or
+        	Fact(name("country"))
+        	Fact(name("pop"))
+        	)
+    
+    then
+        Comm.showMessage("Your own Johnny Cash");
+        drools.halt();
+end
+
+
+rule "Celine Dion easy way"
+    when
+        Fact(name("easy way"), value(true))
+        	Fact(name("instrumental"), value(false))
+        	Fact(name("dzielnia"), value(false))
+        	Fact(name("blaster"), value(false))
+        	Fact(name("solo"), value(true))
+        (or
+        	Fact(name("blues"))
+        	Fact(name("film"))
+        	Fact(name("pop"))
+        	Fact(name("jazz"))
+        	)
+    
+    then
+        Comm.showMessage("Celine Dion will go on");
+        drools.halt();
+end
+
+rule "easy way"
+    when
+        Fact(name("easy way"), value(true))
+        (or
+        	Fact(name("instrumental"), value(true))
+        	Fact(name("instrumental"), value(false))
+        	)
+        (or
+        	Fact(name("dzielnia"), value(true))
+        	Fact(name("dzielnia"), value(false))
+        	)
+        (or
+        	Fact(name("blaster"), value(true))
+        	Fact(name("blaster"), value(false))
+        	)
+        (or
+        	Fact(name("known"), value(false))
+        	)
+        (or
+        	Fact(name("solo"), value(true))
+        	Fact(name("band"), value(true))
+        	)
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	Fact(name("piano"), value(true))
+        	Fact(name("synth"), value(true))
+        )
+        (or
+        	Fact(name("blues"))
+        	Fact(name("country"))
+        	Fact(name("electro"))
+        	Fact(name("rock"))
+        	Fact(name("metal"))
+        	Fact(name("film"))
+        	Fact(name("folk"))
+        	Fact(name("gaming"))
+        	Fact(name("hiphop"))
+        	Fact(name("jazz"))
+        	Fact(name("poetry"))
+        	Fact(name("pop"))
+        	Fact(name("reggae"))
+        	Fact(name("classical"))
+        	Fact(name("disco"))
+        	)
+    
+    then
+        Comm.showMessage("EASY WAY");
         drools.halt();
 end
