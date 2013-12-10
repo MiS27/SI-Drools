@@ -60,10 +60,3 @@ rule "Start"
       insert(new Question(i++, "Wolisz wykonawcę solo czy zespół?", Question.BOOLEAN, new Option[] {new Option("solo")}, true)); // 22
 
 end
-
-rule "test"
-  when
-    f : Fact(name("bass"))
-  then
-    Comm.showMessage("Bas!!");
-end
