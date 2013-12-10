@@ -85,10 +85,12 @@ public class Comm {
 		JOptionPane.showMessageDialog(frame, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);
 		try {
 			int[] test = list.getSelectedIndices();
+			if (question.type == question.SINGLE && test.length == 0)
+				throw new Exception();
 			for (int i : test)
 				ksession.insert(question.possibleAnswers[i].fact);
 		}
-		catch (java.lang.ArrayIndexOutOfBoundsException t) {
+		catch (Exception t) {
 			askMultipleQuestion(question);
 		}
 	}
