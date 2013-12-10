@@ -71,8 +71,8 @@ public class Comm {
 		JList<String> list = new JList<String>(opt);
 		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-		Object[] options = {question.text, question.possibleAnswers};
-		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.PLAIN_MESSAGE);
+		Object[] options = {list};
+		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);
 		try {
 			int data = list.getSelectedIndices()[0];
 			ksession.insert(question.possibleAnswers[data]);

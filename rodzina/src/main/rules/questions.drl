@@ -14,3 +14,10 @@ rule "Start"
     	insert(new Question(i++, "Na co masz ochotę?", "boolean", new Option[] {new Option("instrumental"),new Option("tekst")}, true));
     	insert(new Question(i++, "Wokal męski czy żeński?", "boolean", new Option[] {new Option("męski"),new Option("żeński")}, false));
 end
+
+rule "test"
+  when
+    f : Fact(name("bas"))
+  then
+    Comm.showMessage("Bas!!");
+end
