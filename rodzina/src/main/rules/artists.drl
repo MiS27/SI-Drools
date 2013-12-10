@@ -40,6 +40,7 @@ rule "Opeth"
         Fact(name("dzielnia"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Opeth");
+        drools.halt();
 end
 
 rule "Glenn Miller"
@@ -48,6 +49,7 @@ rule "Glenn Miller"
         Fact(name("opera"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
+        drools.halt();
 end
 
 rule "Jamiroquai"
@@ -69,6 +71,7 @@ rule "Jamiroquai"
         Fact(name("medium lyrics"), value(true))
     then
         Comm.showMessage("Zespół dla Ciebie to Jamiroquai");
+        drools.halt();
 end
 
 rule "Andy McKee"
@@ -86,6 +89,7 @@ rule "Andy McKee"
         not Fact(name("known"), value(true))
     then
         Comm.showMessage("Wykonawca dla Ciebie to Andy McKee");
+        drools.halt();
 end
 
 rule "RHCP"
@@ -108,6 +112,7 @@ rule "RHCP"
         Fact(name("medium songs"), value(true))
     then
         Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
+        drools.halt();
 end
 
 rule "Yeasayer"
@@ -139,6 +144,7 @@ rule "Yeasayer"
         )
     then
         Comm.showMessage("Zespół dla Ciebie to Yeasayer");
+        drools.halt();
 end
 
 
@@ -165,6 +171,7 @@ rule "Deep Purple"
         )
     then
         Comm.showMessage("Zespół dla Ciebie to Deep Purple");
+        drools.halt();
 end
 
 rule "Riverside"
@@ -187,6 +194,7 @@ rule "Riverside"
         Fact(name("long songs"), value(true))
     then
         Comm.showMessage("Zespół dla Ciebie to Riverside");
+        drools.halt();
 end
 
 rule "Peja"
@@ -203,4 +211,5 @@ rule "Peja"
         Fact(name("medium songs"), value(true))
     then
         Comm.showMessage("Peja to Twój wybór, to Twoja rzeczywistość.");
+        drools.halt();
 end
