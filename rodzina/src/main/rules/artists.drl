@@ -59,7 +59,7 @@ rule "Andy McKee"
         )
         not Fact(name("known"), value(true))
     then
-        Comm.showMessage("Wykonawca dla Ciebie to Andy McKee")
+        Comm.showMessage("Wykonawca dla Ciebie to Andy McKee");
 end
 
 rule "RHCP"
@@ -112,5 +112,5 @@ rule "Yeasayer"
             Fact(name("mid tempo"), value(true))
         )
     then
-        Comm.showMessage("Zespół dla Ciebie to Yeasayer")
+        Comm.showMessage("Zespół dla Ciebie to Yeasayer");
 end
