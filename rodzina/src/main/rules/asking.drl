@@ -4,6 +4,10 @@ import com.sample.*;
 
 rule "Ask instruments"
 	when
+    	(or
+        	Fact(name("hard way"), value(true))
+        	Fact(name("easy way"), value(true))
+    	)
 		q : Question(isId(2))
 	then
 		Comm.askQuestion(q);
@@ -12,6 +16,7 @@ end
 
 rule "Ask guitars"
     when
+        Fact(name("hard way"), value(true))
     	Fact(name("guitar"), value(true))
         q : Question(isId(3))
     then
@@ -21,6 +26,7 @@ end
 
 rule "Ask syths"
     when
+        Fact(name("hard way"), value(true))
     	Fact(name("synth"), value(true))
         q : Question(isId(4))
     then
@@ -30,6 +36,10 @@ end
 
 rule "Ask genres"
 	when
+    	(or
+        	Fact(name("hard way"), value(true))
+        	Fact(name("easy way"), value(true))
+    	)
 		q : Question(isId(9))
 	then
 		Comm.askQuestion(q);
@@ -38,6 +48,7 @@ end
 
 rule "Ask blues"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("blues"), value(true))
 		q : Question(isId(10))
 	then
@@ -47,6 +58,7 @@ end
 
 rule "Ask country"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("country"), value(true))
 		q : Question(isId(11))
 	then
@@ -56,6 +68,7 @@ end
 
 rule "Ask electro"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("electro"), value(true))
 		q : Question(isId(12))
 	then
@@ -65,6 +78,7 @@ end
 
 rule "Ask rock"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("rock"), value(true))
 		q : Question(isId(13))
 	then
@@ -74,6 +88,7 @@ end
 
 rule "Ask metal"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("metal"), value(true))
 		q : Question(isId(14))
 	then
@@ -83,6 +98,7 @@ end
 
 rule "Ask folk"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("folk"), value(true))
 		q : Question(isId(15))
 	then
@@ -92,6 +108,7 @@ end
 
 rule "Ask hiphop"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("hiphop"), value(true))
 		q : Question(isId(16))
 	then
@@ -101,6 +118,7 @@ end
 
 rule "Ask jazz"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("jazz"), value(true))
 		q : Question(isId(17))
 	then
@@ -110,6 +128,7 @@ end
 
 rule "Ask pop"
 	when
+        Fact(name("hard way"), value(true))
 		Fact(name("pop"), value(true))
 		q : Question(isId(18))
 	then
@@ -119,6 +138,10 @@ end
 
 rule "Ask instrumental"
     when
+    	(or
+        	Fact(name("hard way"), value(true))
+        	Fact(name("easy way"), value(true))
+    	)
         q : Question(isId(5), asked == false)
     then
         Comm.askQuestion(q);
@@ -128,6 +151,7 @@ end
 
 rule "Ask male vocal"
     when
+        Fact(name("hard way"), value(true))
     	Fact(name("instrumental"), value(false))
         pq : Question(isId(5), asked == true)
         q : Question(isId(6), asked == false)
@@ -139,6 +163,7 @@ end
 
 rule "Ask opera"
     when
+        Fact(name("hard way"), value(true))
     	Fact(name("instrumental"), value(false))
         pq : Question(isId(5), asked == true)
         q : Question(isId(7), asked == false)
@@ -150,6 +175,7 @@ end
 
 rule "Ask scream"
     when
+        Fact(name("hard way"), value(true))
     	Fact(name("instrumental"), value(false))
         pq : Question(isId(5), asked == true)
         q : Question(isId(8), asked == false)
@@ -172,6 +198,7 @@ end
 
 rule "Ask length"
     when
+        Fact(name("hard way"), value(true))
         q : Question(isId(20))
     then
         Comm.askQuestion(q);
@@ -180,6 +207,7 @@ end
 
 rule "Ask dzielnia"
     when
+        Fact(name("easy way"), value(true))
         q : Question(isId(21))
     then
         Comm.askQuestion(q);
@@ -188,6 +216,7 @@ end
 
 rule "Ask blaster"
     when
+        Fact(name("easy way"), value(true))
         q : Question(isId(22))
     then
         Comm.askQuestion(q);
@@ -196,6 +225,10 @@ end
 
 rule "Ask known"
     when
+    	(or
+        	Fact(name("hard way"), value(true))
+        	Fact(name("easy way"), value(true))
+    	)
         q : Question(isId(23))
     then
         Comm.askQuestion(q);
@@ -204,6 +237,10 @@ end
 
 rule "Ask solo"
     when
+    	(or
+        	Fact(name("hard way"), value(true))
+        	Fact(name("easy way"), value(true))
+    	)
         q : Question(isId(24))
     then
         Comm.askQuestion(q);
@@ -212,6 +249,7 @@ end
 
 rule "Ask where"
     when
+        Fact(name("hard way"), value(true))
         q : Question(isId(25), asked == false)
     then
         Comm.askQuestion(q);
@@ -223,7 +261,16 @@ rule "Ask where2"
     when
         Fact(name("where"), value(true))
         pq : Question(isId(25), asked == true)
-        q : Question(isId(26))
+        q : Question(isId(26), asked == false)
+    then
+        Comm.askQuestion(q);
+        q.asked();
+        update(q);
+end
+
+rule "Choose your destiny"
+    when
+        q : Question(isId(1), asked == false)
     then
         Comm.askQuestion(q);
         q.asked();

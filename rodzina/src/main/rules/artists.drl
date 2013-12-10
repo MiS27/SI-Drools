@@ -17,10 +17,29 @@ rule "Ad"
         Comm.showMessage("Nasza baza nie zawiera zespołu dla Ciebie, ale wybierz Hindsight! Alex się ucieczy <spójrz no na niego>");
 end
 
-rule "Opeth"
+rule "Opeth easy"
     when
+        Fact(name("easy way"), value(true))
         Fact(name("metal"), value(true))
         (or
+            Fact(name("gutiar"), value(true))
+            Fact(name("drums"), value(true))
+            Fact(name("bass"), value(true))
+        )
+        Fact(name("instrumental"), value(false))
+        Fact(name("band"), value(true))
+        Fact(name("dzielnia"), value(false))
+        Fact(name("blaster"), value(false))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Opeth");
+        drools.halt();
+end
+
+rule "Opeth"
+    when
+        Fact(name("hard way"), value(true))
+        (or
+        //szczegolowiej
             Fact(name("gutiar"), value(true))
             Fact(name("drums"), value(true))
             Fact(name("bass"), value(true))
@@ -29,7 +48,7 @@ rule "Opeth"
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
-        Fact(name("solo"), value(false))
+        Fact(name("band"), value(true))
         (or
             Fact(name("alt metal"), value(true))
             Fact(name("progressive metal"), value(true))
@@ -37,14 +56,23 @@ rule "Opeth"
             Fact(name("death metal"), value(true))
         )
         Fact(name("long songs"), value(true))
-        Fact(name("dzielnia"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Opeth");
         drools.halt();
 end
 
-rule "Glenn Miller"
+rule "Glenn Miller easy way"
     when
+        Fact(name("easy way"), value(true))
+        Fact(name("jazz"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
+        drools.halt();
+end
+
+rule "Glenn Miller hard way"
+    when
+        Fact(name("hard way"), value(true))
         Fact(name("jazz"), value(true))
         Fact(name("opera"), value(false))
     then
@@ -52,41 +80,69 @@ rule "Glenn Miller"
         drools.halt();
 end
 
-rule "Jamiroquai"
+rule "Jamiroquai easy way"
     when
-        (or
-            Fact(name("jazz"), value(true))
-            Fact(name("rock"), value(true))
-            Fact(name("acid jazz"), value(true))
-        )
-        Fact(name("guitar"), value(true))
-        Fact(name("male vocal"), value(true))
-        Fact(name("opera"), value(false))
         Fact(name("instrumental"), value(false))
-        (or
-            Fact(name("high tempo"), value(true))
-            Fact(name("mid tempo"), value(true))
-        )
-        Fact(name("medium songs"), value(true))
-        Fact(name("medium lyrics"), value(true))
+    	Fact(name("easy way"), value(true))           	
+		(or
+			Fact(name("jazz"), value(true))
+			Fact(name("rock"), value(true))
+		)
+		Fact(name("guitar"), value(true))
+		Fact(name("dzielnia"), value(false))
+		Fact(name("blaster"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Jamiroquai");
         drools.halt();
 end
 
+rule "Jamiroquai hard way"
+    when
+        Fact(name("instrumental"), value(false))
+    	Fact(name("hard way"), value(true))
+    	Fact(name("acid jazz"), value(true))
+    	Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        (or
+            Fact(name("high tempo"), value(true))
+            Fact(name("mid tempo"), value(true))
+        )
+        Fact(name("medium songs"), value(true))
+        (or
+        	Fact(name("medium lyrics"), value(true))
+        	Fact(name("lyrics dont matter"), value(true))
+        )
+    then
+        Comm.showMessage("Zespół dla Ciebie to Jamiroquai");
+        drools.halt();
+end
+
+rule "Andy McKee easy way"
+    when
+        Fact(name("easy way"), value(true))
+        Fact(name("solo"), value(true))
+        Fact(name("instrumental"), value(true))
+        (or
+            Fact(name("folk"), value(true))
+            Fact(name("rock"), value(true))
+        )
+        Fact(name("known"), value(false))
+    then
+        Comm.showMessage("Wykonawca dla Ciebie to Andy McKee");
+        drools.halt();
+end
+
 rule "Andy McKee"
     when
-        Fact(name("guitar"), value(true))
         Fact(name("acoustic guitar"), value(true))
         Fact(name("solo"), value(true))
         Fact(name("instrumental"), value(true))
         (or
             Fact(name("alt rock"), value(true))
             Fact(name("art rock"), value(true))
-            Fact(name("folk"), value(true))
             Fact(name("acoustic rock"), value(true))
         )
-        not Fact(name("known"), value(true))
+        Fact(name("known"), value(false))
     then
         Comm.showMessage("Wykonawca dla Ciebie to Andy McKee");
         drools.halt();
@@ -123,7 +179,7 @@ rule "Yeasayer"
             Fact(name("electro"), value(true))
         )
         Fact(name("guitar"), value(true))
-        Fact(name("solo"), value(false))
+        Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("clean vocal"), value(true))
@@ -158,7 +214,7 @@ rule "Deep Purple"
         )
         Fact(name("guitar"), value(true))
         Fact(name("known"), value(true))
-        Fact(name("solo"), value(false))
+        Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("scream"), value(false))
@@ -186,7 +242,7 @@ rule "Riverside"
         	Fact(name("bass"), value(true))
         	Fact(name("piano"), value(true))
         )
-        Fact(name("solo"), value(false))
+        Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("scream"), value(false))

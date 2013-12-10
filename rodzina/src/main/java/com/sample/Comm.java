@@ -77,7 +77,7 @@ public class Comm {
 		else
 			list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-		Object[] options = {list};
+		Object[] options = {question.text, list};
 		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);
 		try {
 			int[] test = list.getSelectedIndices();
