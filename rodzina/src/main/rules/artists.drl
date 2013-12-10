@@ -199,3 +199,19 @@ rule "Riverside"
     then
         Comm.showMessage("Zespół dla Ciebie to Riverside");
 end
+
+rule "Peja"
+    when
+        Fact(name("hiphop"), value(true)) 
+        (or 
+        	Fact(name("dzielnia"), value(true))
+        	Fact(name("blaster"), value(true))
+        )
+        Fact(name("solo"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("scream"), value(false))
+        Fact(name("medium songs"), value(true))
+    then
+        Comm.showMessage("Peja to Twój wybór, to Twoja rzeczywistość.");
+end
