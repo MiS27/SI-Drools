@@ -45,6 +45,15 @@ rule "Glenn Miller"
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
 end
 
+rule "Andy McKee"
+    when
+        Fact(name("guitar"), value(true))
+        Fact(name("instrumental"), value(true))
+        not Fact(name("known"), value(true))
+    then
+        Comm.showMessage("Wykonawca dla Ciebie to Andy McKee")
+end
+
 rule "RHCP"
     when
         Fact(name("rock"), value(true))

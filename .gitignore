@@ -1,2 +1,3 @@
 
 *.jar
+/rodzina/target/*
