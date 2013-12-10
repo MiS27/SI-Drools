@@ -40,7 +40,6 @@ rule "Glenn Miller"
     when
         Fact(name("jazz"), value(true))
         Fact(name("opera"), value(false))
-        Fact(name("name"), value(bool))
     then
         Comm.showMessage("Zespół dla Ciebie to Glenn Miller");
 end
