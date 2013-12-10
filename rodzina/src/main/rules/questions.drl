@@ -9,7 +9,7 @@ rule "Start"
   		f.setValue(false);
   		update(f);
 		int i = 0;
-    	insert(new Question(i++, "Test. wybierz tylko jedno:", Question.SINGLE, new Option[] {new Option("jedno"),new Option("drugo"),new Option("trzecio"),new Option("czwarto")}, false));
+    	insert(new Question(i++, "Test. Wybierz jego trudność:", Question.SINGLE, new Option[] {new Option("easy way"),new Option("hard way")}, false));
 
     	insert(new Question(i++, "Może metal?", Question.BOOLEAN, new Option[] {new Option("metal", new Fact("metal", true))}, false));
 

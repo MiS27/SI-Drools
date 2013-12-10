@@ -36,7 +36,7 @@ rule "Opeth"
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
-        Fact(name("band"), value(true))
+        Fact(name("solo"), value(false))
         (or
             Fact(name("alt metal"), value(true))
             Fact(name("progressive metal"), value(true))
@@ -109,7 +109,7 @@ rule "RHCP"
         Fact(name("clean vocal"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
-        Fact(name("band"), value(true))
+        Fact(name("solo"), value(false))
         (or
             Fact(name("alt rock"), value(true))
             Fact(name("art rock"), value(true))
@@ -121,7 +121,7 @@ rule "RHCP"
         Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
 end
 
-rule "Yeasayer2"
+rule "Yeasayer"
     when
         (or
             Fact(name("pop"), value(true))
@@ -129,7 +129,7 @@ rule "Yeasayer2"
             Fact(name("electro"), value(true))
         )
         Fact(name("guitar"), value(true))
-        Fact(name("band"), value(true))
+        Fact(name("solo"), value(false))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("clean vocal"), value(true))
@@ -162,7 +162,8 @@ rule "Deep Purple"
             Fact(name("acid rock"), value(true))
         )
         Fact(name("guitar"), value(true))
-        Fact(name("band"), value(true))
+        Fact(name("known"), value(true))
+        Fact(name("solo"), value(false))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("scream"), value(false))
@@ -189,7 +190,7 @@ rule "Riverside"
         	Fact(name("bass"), value(true))
         	Fact(name("piano"), value(true))
         )
-        Fact(name("band"), value(true))
+        Fact(name("solo"), value(false))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("scream"), value(false))
