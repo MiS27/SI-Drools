@@ -121,7 +121,7 @@ rule "RHCP"
         Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
 end
 
-rule "Yeasayer"
+rule "Yeasayer2"
     when
         (or
             Fact(name("pop"), value(true))
