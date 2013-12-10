@@ -20,6 +20,7 @@ rule "Opeth"
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
+        Fact(name("band"), value(true))
         (or
             Fact(name("alt metal"), value(true))
             Fact(name("progressive metal"), value(true))
@@ -54,6 +55,7 @@ rule "RHCP"
         Fact(name("clean vocal"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
+        Fact(name("band"), value(true))
         (or
             Fact(name("alt rock"), value(true))
             Fact(name("art rock"), value(true))
@@ -73,6 +75,7 @@ rule "Yeasayer"
             Fact(name("electro"), value(true))
         )
         Fact(name("guitar"), value(true))
+        Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("clean vocal"), value(true))
