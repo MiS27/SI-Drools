@@ -38,6 +38,10 @@ end
 
 rule "Opeth"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
         Fact(name("hard way"), value(true))
         (or
         //szczegolowiej
@@ -78,6 +82,10 @@ end
 
 rule "Glenn Miller hard way"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("america"), value(true))
+        	)
         Fact(name("hard way"), value(true))
         Fact(name("jazz"), value(true))
         Fact(name("opera"), value(false))
@@ -104,6 +112,10 @@ end
 
 rule "Jamiroquai hard way"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
         Fact(name("instrumental"), value(false))
     	Fact(name("hard way"), value(true))
     	Fact(name("acid jazz"), value(true))
@@ -140,6 +152,10 @@ end
 
 rule "Andy McKee"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("america"), value(true))
+        	)
         Fact(name("hard way"), value(true))
         Fact(name("acoustic guitar"), value(true))
         Fact(name("solo"), value(true))
@@ -174,6 +190,10 @@ end
 
 rule "RHCP"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("america"), value(true))
+        	)
         Fact(name("hard way"), value(true))
         (or 
 	        Fact(name("acoustic guitar"), value(true))
@@ -222,6 +242,10 @@ end
 
 rule "Yeasayer"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
         (or
         	Fact(name("electric guitar"), value(true))
         	Fact(name("synth"), value(true))
@@ -248,6 +272,10 @@ end
 
 rule "Deep Purple easy way"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
        	Fact(name("easy way"), value(true))
         (or
             Fact(name("rock"), value(true))
@@ -318,6 +346,10 @@ end
 
 rule "Riverside"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
         (or
             Fact(name("progressive rock"), value(true))
             Fact(name("progressive metal"), value(true))
@@ -354,6 +386,10 @@ end
 
 rule "Peja"
     when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("europe"), value(true))
+        	)
         Fact(name("hiphop"), value(true))
         Fact(name("solo"), value(true))
         Fact(name("male vocal"), value(true))
@@ -379,7 +415,8 @@ rule "Johnny Cash easy way"
         )
         (or
         	Fact(name("country"))
-        	Fact(name("pop"))
+        	Fact(name("rock"))
+        	Fact(name("folk"))
         	)
     
     then
@@ -387,6 +424,31 @@ rule "Johnny Cash easy way"
         drools.halt();
 end
 
+rule "Johnny Cash hard way"
+    when
+    	or(
+        	Fact(name("where"), value(false))
+        	Fact(name("america"), value(true))
+        	)
+        Fact(name("hard way"), value(true))
+        	Fact(name("instrumental"), value(false))
+        	Fact(name("solo"), value(true))
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("piano"), value(true))
+        )
+        (or
+        	Fact(name("rockabilly"))
+        	Fact(name("nashville"))
+        	Fact(name("folk"))
+        	Fact(name("soft rock"))
+        	Fact(name("art rock"))
+        	)
+    
+    then
+        Comm.showMessage("Your own Johnny Cash");
+        drools.halt();
+end
 
 rule "Celine Dion easy way"
     when
@@ -407,6 +469,29 @@ rule "Celine Dion easy way"
         drools.halt();
 end
 
+rule "Metallica easy way"
+    when
+        Fact(name("easy way"), value(true))
+        	Fact(name("instrumental"), value(false))
+        	Fact(name("dzielnia"), value(false))
+        	Fact(name("blaster"), value(false))
+        	Fact(name("band"), value(true))
+        	
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	)
+        (or
+        	Fact(name("rock"))
+        	Fact(name("metal"))
+        	)
+    
+    then
+        Comm.showMessage("Master of Metallica");
+        drools.halt();
+end
+/*
 rule "easy way"
     when
         Fact(name("easy way"), value(true))
@@ -458,3 +543,4 @@ rule "easy way"
         Comm.showMessage("EASY WAY");
         drools.halt();
 end
+*/
