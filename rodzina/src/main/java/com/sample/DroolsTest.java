@@ -1,7 +1,8 @@
 package com.sample;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.HeadlessException;
+
+import javax.swing.JFrame;
 
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -15,12 +16,19 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 
-public class DroolsTest {
-	public static List<Question> questions = new ArrayList<Question>();
+public class DroolsTest extends JFrame {
+	
+    public DroolsTest() {
+        super("MusicAI");
+        setUndecorated(true);
+        setVisible(true);
+        setLocationRelativeTo(null);
+	}
 
-    public static final void main(String[] args) {
+	public static final void main(String[] args) {
         try {
             // load up the knowledge base
+        	DroolsTest frame = new DroolsTest();
             KnowledgeBase kbase = readKnowledgeBase();
             StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
             KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, "test");
@@ -31,8 +39,12 @@ public class DroolsTest {
             // message.setStatus(Message.HELLO);
             // ksession.insert(message);
             init(ksession);
-            ksession.fireAllRules();
+            ksession.fireUntilHalt();
+            System.out.println("test");
             logger.close();
+            System.out.println("test2");
+            frame.dispose();
+            System.out.println("test3");
         } catch (Throwable t) {
             t.printStackTrace();
         }

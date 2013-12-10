@@ -3,6 +3,9 @@ package com.sample;
 import java.util.Map;
 import java.util.ArrayList;
 
+import javassist.tools.framedump;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
@@ -20,6 +23,7 @@ import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 
 public class Comm {
+    static JFrame frame = new JFrame();
 	private static StatefulKnowledgeSession ksession;
 	public static void setSession(StatefulKnowledgeSession session) {
 		ksession = session;
@@ -78,7 +82,7 @@ public class Comm {
 			list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		Object[] options = {question.text, list};
-		JOptionPane.showMessageDialog(null, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(frame, options, "Choose an answer", JOptionPane.QUESTION_MESSAGE);
 		try {
 			int[] test = list.getSelectedIndices();
 			for (int i : test)

@@ -26,6 +26,7 @@ rule "Opeth easy"
             Fact(name("drums"), value(true))
             Fact(name("bass"), value(true))
         )
+			
         Fact(name("instrumental"), value(false))
         Fact(name("band"), value(true))
         Fact(name("dzielnia"), value(false))
@@ -45,6 +46,11 @@ rule "Opeth"
             Fact(name("bass"), value(true))
         )
         Fact(name("instrumental"), value(false))
+        (or
+	        Fact(name("good lyrics"))
+			Fact(name("medium lyrics"))
+			Fact(name("nie wiem, nie znam sie, nie orientuje sie, zarobiony jestem"))
+			)
         Fact(name("scream"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
@@ -134,6 +140,7 @@ end
 
 rule "Andy McKee"
     when
+        Fact(name("hard way"), value(true))
         Fact(name("acoustic guitar"), value(true))
         Fact(name("solo"), value(true))
         Fact(name("instrumental"), value(true))
@@ -148,37 +155,77 @@ rule "Andy McKee"
         drools.halt();
 end
 
-rule "RHCP"
+rule "RHCP easy way"
     when
+        Fact(name("easy way"), value(true))
         Fact(name("rock"), value(true))
-        Fact(name("guitar"), value(true))
-        Fact(name("bass"), value(true))
-        Fact(name("drums"), value(true))
-        Fact(name("instrumental"), value(false))
-        Fact(name("clean vocal"), value(true))
-        Fact(name("male vocal"), value(true))
-        Fact(name("opera"), value(false))
-        Fact(name("solo"), value(false))
         (or
-            Fact(name("alt rock"), value(true))
-            Fact(name("art rock"), value(true))
-            Fact(name("rapcore"), value(true))
-        )
-        not Fact(name("dzielnia"), value(true))
+	        Fact(name("guitar"), value(true))
+	        Fact(name("bass"), value(true))
+	        Fact(name("drums"), value(true))
+	        )
+        Fact(name("instrumental"), value(false))
+        Fact(name("band"), value(true))
         Fact(name("medium songs"), value(true))
     then
         Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
         drools.halt();
 end
 
-rule "Yeasayer"
+rule "RHCP"
+    when
+        Fact(name("hard way"), value(true))
+        (or 
+	        Fact(name("acoustic guitar"), value(true))
+	        Fact(name("electric guitar"), value(true))
+	        Fact(name("bass"), value(true))
+	        Fact(name("drums"), value(true))
+	        )
+        Fact(name("instrumental"), value(false))
+        Fact(name("clean vocal"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("band"), value(true))
+        (or
+            Fact(name("alt rock"), value(true))
+            Fact(name("art rock"), value(true))
+            Fact(name("rapcore"), value(true))
+        )
+        Fact(name("medium songs"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
+        drools.halt();
+end
+
+rule "Yeasayer easy way"
     when
         (or
             Fact(name("pop"), value(true))
             Fact(name("rock"), value(true))
             Fact(name("electro"), value(true))
         )
-        Fact(name("guitar"), value(true))
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("synth"), value(true))
+        	)
+        Fact(name("band"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        Fact(name("clean vocal"), value(true))
+        Fact(name("instrumental"), value(false))
+        Fact(name("short songs"), value(true))
+        Fact(name("known"), value(false))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Yeasayer");
+        drools.halt();
+end
+
+rule "Yeasayer"
+    when
+        (or
+        	Fact(name("electric guitar"), value(true))
+        	Fact(name("synth"), value(true))
+        	)
         Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
@@ -193,27 +240,48 @@ rule "Yeasayer"
             Fact(name("dream pop"), value(true))
         )
         Fact(name("short songs"), value(true))
-        Fact(name("dzielnia"), value(false))
-        (or
-            Fact(name("slow tempo"), value(true))
-            Fact(name("mid tempo"), value(true))
-        )
+        Fact(name("known"), value(false))
     then
         Comm.showMessage("Zespół dla Ciebie to Yeasayer");
         drools.halt();
 end
 
-
+rule "Deep Purple easy way"
+    when
+       	Fact(name("easy way"), value(true))
+        (or
+            Fact(name("rock"), value(true))
+            Fact(name("metal"), value(true))
+        )
+        (or 
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	Fact(name("piano"), value(true))
+        	)
+        Fact(name("band"), value(true))
+        Fact(name("instrumental"), value(false))
+        Fact(name("medium songs"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Deep Purple");
+        drools.halt();
+end
 
 rule "Deep Purple"
     when
+        Fact(name("hard way"), value(true))
+        (or 
+        //szczegóły
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	Fact(name("piano"), value(true))
+        	)
         (or
             Fact(name("hard rock"), value(true))
             Fact(name("heavy metal"), value(true))
             Fact(name("acid rock"), value(true))
         )
-        Fact(name("guitar"), value(true))
-        Fact(name("known"), value(true))
         Fact(name("band"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
@@ -221,12 +289,30 @@ rule "Deep Purple"
         Fact(name("clean vocal"), value(true))
         Fact(name("instrumental"), value(false))
         Fact(name("medium songs"), value(true))
-        (or
-            Fact(name("mid tempo"), value(true))
-            Fact(name("fast tempo"), value(true))
-        )
     then
         Comm.showMessage("Zespół dla Ciebie to Deep Purple");
+        drools.halt();
+end
+
+rule "Riverside easy way"
+    when
+        (or
+            Fact(name("rock"), value(true))
+            Fact(name("metal"), value(true))
+        )
+        (or
+        	Fact(name("guitar"), value(true))
+        	Fact(name("drums"), value(true))
+        	Fact(name("bass"), value(true))
+        	Fact(name("piano"), value(true))
+        )
+        Fact(name("band"), value(true))
+        Fact(name("instrumental"), value(false))
+        Fact(name("long songs"), value(true))
+        Fact(name("dzielnia"), value(false))
+        Fact(name("blaster"), value(false))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Riverside");
         drools.halt();
 end
 
@@ -237,12 +323,14 @@ rule "Riverside"
             Fact(name("progressive metal"), value(true))
         )
         (or
+        //szczegóły
         	Fact(name("guitar"), value(true))
         	Fact(name("drums"), value(true))
         	Fact(name("bass"), value(true))
         	Fact(name("piano"), value(true))
         )
         Fact(name("band"), value(true))
+        Fact(name("instrumental"), value(false))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
         Fact(name("scream"), value(false))
@@ -253,16 +341,23 @@ rule "Riverside"
         drools.halt();
 end
 
+rule "Peja easy way"
+    when
+        Fact(name("hiphop"), value(true))
+        Fact(name("solo"), value(true))
+        Fact(name("instrumental"), value(false))
+    then
+        Comm.showMessage("Peja to Twój wybór, to Twoja rzeczywistość.");
+        drools.halt();
+end
+
 rule "Peja"
     when
         Fact(name("hiphop"), value(true))
-        (or
-        	Fact(name("dzielnia"), value(true))
-        	Fact(name("blaster"), value(true))
-        )
         Fact(name("solo"), value(true))
         Fact(name("male vocal"), value(true))
         Fact(name("opera"), value(false))
+		Fact(name("only bad lyrics"))
         Fact(name("scream"), value(false))
         Fact(name("medium songs"), value(true))
     then

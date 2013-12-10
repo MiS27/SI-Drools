@@ -187,6 +187,7 @@ end
 
 rule "Ask lyrics"
     when
+        Fact(name("hard way"), value(true))
         Fact(name("instrumental"), value(false))
         pq : Question(isId(5), asked == true)
         q : Question(isId(19), asked == false)
