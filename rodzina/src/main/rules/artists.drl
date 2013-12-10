@@ -3,6 +3,13 @@ package rules
 //import com.sample.DroolsTest.*;
 import com.sample.*;
 
+/*
+good lyrics
+medium lyrics
+lyrics dont matter
+quit
+*/
+
 rule "Opeth"
     when
         Fact(name("metal"), value(true))
@@ -11,6 +18,8 @@ rule "Opeth"
         Fact(name("bass"), value(true))
         not Fact(name("instrumental"), value(true))
         Fact(name("scream"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
         (or
             Fact(name("alt metal"), value(true))
             Fact(name("progressive metal"), value(true))
@@ -25,4 +34,25 @@ rule "Opeth"
         )
     then
         Comm.showMessage("Zespół dla Ciebie to Opeth");
+end
+
+rule "RHCP"
+    when
+        Fact(name("rock"), value(true))
+        Fact(name("guitar"), value(true))
+        Fact(name("bass"), value(true))
+        Fact(name("drums"), value(true))
+        not Fact(name("instrumental"), value(true))
+        Fact(name("clean vocal"), value(true))
+        Fact(name("male vocal"), value(true))
+        Fact(name("opera"), value(false))
+        (or
+            Fact(name("alt rock"), value(true))
+            Fact(name("art rock"), value(true))
+            Fact(name("rapcore"), value(true))
+        )
+        not Fact(name("dzielnia"), value(true))
+        Fact(name("medium songs"), value(true))
+    then
+        Comm.showMessage("Zespół dla Ciebie to Red Hot Chili Peppers");
 end
